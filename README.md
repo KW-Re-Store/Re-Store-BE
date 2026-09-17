@@ -1,17 +1,26 @@
 # Re-Store BE
 
-Node.js API powered by Express and TypeScript.
+Spring Boot API for the Re-Store commercial-area policy dashboard.
+
+## Requirements
+
+- Java 21
+- Maven 3.9+
 
 ## Start
 
 ```bash
-cp .env.example .env
-npm install
-npm run dev
+mvn spring-boot:run
 ```
 
-The health endpoint is available at:
+The API runs on port `4000` by default. You can override it with `PORT`.
 
-```text
-GET http://localhost:4000/health
+```bash
+PORT=8080 mvn spring-boot:run
+```
+
+For frontend CORS, set comma-separated origins with `CORS_ALLOWED_ORIGINS`.
+
+```bash
+CORS_ALLOWED_ORIGINS=http://localhost:5173 mvn spring-boot:run
 ```
